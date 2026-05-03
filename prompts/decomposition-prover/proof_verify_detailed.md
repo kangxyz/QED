@@ -15,6 +15,8 @@ Use these results as inputs to your work. Do NOT re-verify citations or re-check
 
 You must be absolutely strict. If you are uncertain whether the proof establishes a certain claim, then it fails to do so. You should always be very conservative. All judgement should be based on evidence.
 
+**Number 1 rule: All steps in the proof need to be justified rigorously in detail!**
+
 ---
 
 ## Context: Decomposition-Based Proving
