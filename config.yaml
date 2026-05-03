@@ -101,7 +101,7 @@ pipeline:
   # Cost scales linearly: 2 verifiers = 2x verification cost, 3 = 3x.
   verification_agents:
     enabled: true               # true = use providers below, false = Claude-only
-    providers: ["gemini"]       # any subset of ["claude", "codex", "gemini"]
+    providers: ["codex"]       # any subset of ["claude", "codex", "gemini"]
 
   # Proof selection agent (only used when multi_model.enabled=true).
   # Picks the best proof when multiple models generate proofs in parallel.
@@ -138,8 +138,8 @@ decomposition:
     decomposer: "codex"           # creates/revises proof decomposition plan
     single_prover: "codex"        # executes decomposition plan, writes complete proof
     regulator: "codex"            # decides REVISE_PROOF/REVISE_PLAN/REWRITE after verification fails
-    structural_verifier: "gemini" # structural verification of proof (Phases 1-5)
-    detailed_verifier: "gemini"   # detailed verification of proof (Phase 6)
+    structural_verifier: "codex" # structural verification of proof (Phases 1-5)
+    detailed_verifier: "codex"   # detailed verification of proof (Phase 6)
     verdict: "codex"             # final verdict on verification reports (DONE/CONTINUE)
 
 
