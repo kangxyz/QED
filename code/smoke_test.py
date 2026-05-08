@@ -304,13 +304,53 @@ async def run_smoke_test(config: dict, config_path: str | None = None) -> bool:
         check("Skill loading", False, str(e))
 
     # -------------------------------------------------------
-    # Test 5: Claude CLI connectivity (provider-aware)
+    # Determine which providers are actually used by the configured pipeline.
+    # Skip connectivity tests for providers that no role references.
     # -------------------------------------------------------
     import shutil
     import subprocess
 
+    pipeline_cfg_for_use = config.get("pipeline", {})
+    prover_cfg_for_use = config.get("prover", {})
+    providers_in_use: set[str] = set()
+
+    mm_cfg_use = pipeline_cfg_for_use.get("multi_model", {})
+    if mm_cfg_use.get("enabled", False):
+        providers_in_use.update(mm_cfg_use.get("providers", []))
+    else:
+        providers_in_use.add("claude")  # default proof search uses claude
+
+    va_cfg_use = pipeline_cfg_for_use.get("verification_agents", {})
+    if va_cfg_use.get("enabled", False):
+        providers_in_use.update(va_cfg_use.get("providers", []))
+    else:
+        providers_in_use.add("claude")  # default verification uses claude
+
+    bs_cfg_use = pipeline_cfg_for_use.get("brainstorm", {})
+    if bs_cfg_use.get("enabled", False):
+        providers_in_use.update(bs_cfg_use.get("providers", []))
+
+    for agent_key in ("literature_survey", "proof_select", "proof_summary"):
+        providers_in_use.add(
+            pipeline_cfg_for_use.get(agent_key, {}).get("provider", "claude").lower()
+        )
+
+    if prover_cfg_for_use.get("mode", "simple") == "decomposition":
+        decomp_models = config.get("decomposition", {}).get("models", {})
+        for v in decomp_models.values():
+            providers_in_use.add(str(v).lower())
+
+    providers_in_use = {p for p in providers_in_use if p in {"claude", "codex", "gemini"}}
+
+    # -------------------------------------------------------
+    # Test 5: Claude CLI connectivity (provider-aware)
+    # -------------------------------------------------------
     provider = claude_cfg.get("provider", "subscription")
-    print(f"\n=== Test 5: Claude CLI connectivity (provider: {provider}) ===")
+    run_claude_test = "claude" in providers_in_use
+    if not run_claude_test:
+        print("\n=== Test 5: Claude CLI connectivity [SKIPPED — Claude not used by any role] ===")
+    else:
+        print(f"\n=== Test 5: Claude CLI connectivity (provider: {provider}) ===")
 
     # Detect if ~/.claude/settings.json injects provider vars that would
     # override the config.yaml provider selection.
@@ -318,7 +358,7 @@ async def run_smoke_test(config: dict, config_path: str | None = None) -> bool:
                       "AWS_PROFILE", "ANTHROPIC_MODEL")
     cli_settings_path = os.path.join(os.path.expanduser("~"), ".claude", "settings.json")
     cli_settings_conflict = False
-    if os.path.exists(cli_settings_path):
+    if run_claude_test and os.path.exists(cli_settings_path):
         import json as _json_settings
         try:
             with open(cli_settings_path) as _sf:
@@ -350,7 +390,9 @@ async def run_smoke_test(config: dict, config_path: str | None = None) -> bool:
             pass  # Can't read settings — not a conflict we can detect
 
     cli_path = claude_cfg.get("cli_path", "claude")
-    if shutil.which(cli_path) is not None:
+    if not run_claude_test:
+        pass
+    elif shutil.which(cli_path) is not None:
         check(f"Claude CLI '{cli_path}' found", True)
 
         # Build options via make_claude_options so we get the right model
