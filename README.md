@@ -31,28 +31,53 @@ QED is a multi-agent pipeline that takes a mathematical problem statement in LaT
 
 ## Math Research Problems Solved by QED, Verified by Domain Experts
 
-### 1. Carleman Weight Function Construction (Inverse Problems / PDE)
+### 1. Return Probability Asymptotics for Lamplighter Walk on $\mathbb{Z}_2 \wr T_d$ (Probability Theory)
 
-**Domain:** Inverse problems, Carleman estimates, wave equations on half-infinite domains.
+**Domain:** Probability theory, random walks on groups, lamplighter random walks, spectral analysis.
 
-**What QED solved:** QED found a smooth space-time weight function (with auxiliary parameters) for the wave operator on a half-infinite domain satisfying global pseudoconvexity, growth, and positivity constraints required to validate a Carleman estimate, and gave proofs characterizing the admissible parameter regime ensuring these conditions hold.
+**What QED solved:** For $d \ge 3$ and the switch–walk–switch lamplighter random walk on $\mathbb{Z}_2 \wr T_d$ (where $T_d$ is the infinite $d$-regular tree), QED proved the sharp asymptotic
+$$p_{2n}(e,e) = \rho_d^{2n} \exp\!\left[-\bigl(\pi^2(\log(d-1))^2 + o(1)\bigr)\frac{n}{\log^2 n}\right], \quad \rho_d = \frac{2\sqrt{d-1}}{d}.$$
+The proof cleverly combines probabilistic constructions with spectral analysis.
 
-**Experts:** Qiao Zhuang (University of Missouri-Kansas City), Qihao Ye (University of California, San Diego), and Zhongqiang Zhang (Worcester Polytechnic Institute). They formulated the question, verified the QED-generated proof, and carried out the dependent mathematical work.
+**Expert:** Minghao Pan, PhD candidate at Caltech Mathematics Department.
 
-**Workflow:** Experts gave QED the problem: finding a function that satisfies the constraints. QED returned a candidate with proof. Experts found that the constraints were too weak (they had initially given the wrong problem). Experts strengthened the constraints, gave the problem back to QED, and instructed QED to continue the search starting from the previous candidate. QED then returned the final candidate and the proofs. In the entire loop, there was no human intervention besides the experts changing their problem statement once.
+**Workflow:** Minghao Pan provided the problem statement to QED with no further mathematical input. QED ran in decomposition mode and produced the correct proof through multiple rounds of refinement, including substantial changes of proof plan by the decomposition agent. The proof was verified by the expert.
 
-**Problems and proofs:** Will be released after the paper is arxived.
+**Problems and proofs:** in /proved_statements/prob-May-15-2026 in this github repo.
 
 <details>
-<summary><b>Expert comment (Qiao Zhuang, Qihao Ye, Zhongqiang Zhang)</b></summary>
+<summary><b>Expert comment (Minghao Pan)</b></summary>
 
-The use of LLM-based search aims to replace the traditional hand-crafted process of identifying suitable Carleman weight functions for deriving Carleman estimates. This process is often difficult, highly problem-dependent, and time-consuming, and may still fail to produce a valid construction through manual trial. By automating the search over admissible weight functions under the required structural and inequality constraints, the approach has the potential to systematically explore viable candidates, thereby reducing reliance on ad hoc intuition and extensive analytical effort. This is particularly important for inverse problems, where the construction of an appropriate Carleman weight is a central and highly nontrivial step that directly impacts stability and uniqueness results. An LLM-assisted search framework can help identify feasible weight structures, guide the design of admissible functions, and accelerate the development of Carleman-based methodologies, thereby extending their applicability to more complex or less structured problems.
+This is a research-level open question in probability theory. Without human mathematical input beyond the problem statement, QED generated a correct proof through multiple rounds of refinement, including substantial changes of proof plan by the decomposition agent. The first result is a solid specialized contribution. Its proof has real mathematical content as it cleverly combines probabilistic constructions with spectral analysis. Its significance appears comparable to work suitable for venues such as the *Electronic Journal of Probability* or *Proceedings of the American Mathematical Society*. The question is in the style of precise probabilistic calculations and estimates.
 
 </details>
 
 ---
 
-### 2. Nonexistence Result for Critical Transport Equation (Applied Analysis / Fluid PDE)
+### 2. Total Variation Asymptotics for Switch-Walk-Switch on $\mathbb{Z}_2 \wr \mathbb{Z}$ (Probability Theory)
+
+**Domain:** Probability theory, random walks on groups, lamplighter random walks, total variation distance.
+
+**What QED solved:** Let $P_t^x$ denote the law at time $t$ of the discrete-time switch-walk-switch walk on $\mathbb{Z}_2 \wr \mathbb{Z}$. For $x=(\mathbf{0},0)$ and $y=(\mathbf{0},2)$, QED proved the asymptotic behavior
+$$\|P_t^x - P_t^y\|_{\mathrm{TV}} \asymp t^{-1/2},$$
+where $\asymp$ denotes equality up to positive multiplicative constants.
+
+**Expert:** Minghao Pan, PhD candidate at Caltech Mathematics Department.
+
+**Workflow:** Minghao Pan provided the problem statement to QED with no further mathematical input. QED ran in decomposition mode and produced the correct proof through multiple rounds of refinement, including substantial changes of proof plan by the decomposition agent. The proof was verified by the expert.
+
+**Problems and proofs:** in /proved_statements/prob-May-15-2026 in this repo.
+
+<details>
+<summary><b>Expert comment (Minghao Pan)</b></summary>
+
+This is a technically nontrivial PhD-level problem in probability theory. Without human mathematical input beyond the problem statement, QED generated a correct proof through multiple rounds of refinement, including substantial changes of proof plan by the decomposition agent. The question is in the style of precise probabilistic calculations and estimates.
+
+</details>
+
+---
+
+### 3. Nonexistence Result for Critical Transport Equation (Applied Analysis / Fluid PDE)
 
 **Domain:** Applied analysis, fluid mixing, critical transport equations.
 
@@ -79,7 +104,7 @@ See the [full expert comments](proved_statements/analysis-Apr-24-2026/README.md#
 
 ---
 
-### 3. Equivalence of Batchelor Scale Condition for Shear Flow (Applied Analysis / Fluid PDE)
+### 4. Equivalence of Batchelor Scale Condition for Shear Flow (Applied Analysis / Fluid PDE)
 
 **Domain:** Applied analysis, fluid PDE, advection-diffusion equations, turbulence theory, Batchelor scale.
 
@@ -106,47 +131,22 @@ See the [full expert comments](proved_statements/analysis-Apr-24-2026/README.md#
 
 ---
 
-### 4. Return Probability Asymptotics for Lamplighter Walk on $\mathbb{Z}_2 \wr T_d$ (Probability Theory)
+### 5. Carleman Weight Function Construction (Inverse Problems / PDE)
 
-**Domain:** Probability theory, random walks on groups, lamplighter random walks, spectral analysis.
+**Domain:** Inverse problems, Carleman estimates, wave equations on half-infinite domains.
 
-**What QED solved:** For $d \ge 3$ and the switch–walk–switch lamplighter random walk on $\mathbb{Z}_2 \wr T_d$ (where $T_d$ is the infinite $d$-regular tree), QED proved the sharp asymptotic
-$$p_{2n}(e,e) = \rho_d^{2n} \exp\!\left[-\bigl(\pi^2(\log(d-1))^2 + o(1)\bigr)\frac{n}{\log^2 n}\right], \quad \rho_d = \frac{2\sqrt{d-1}}{d}.$$
-The proof cleverly combines probabilistic constructions with spectral analysis.
+**What QED solved:** QED found a smooth space-time weight function (with auxiliary parameters) for the wave operator on a half-infinite domain satisfying global pseudoconvexity, growth, and positivity constraints required to validate a Carleman estimate, and gave proofs characterizing the admissible parameter regime ensuring these conditions hold.
 
-**Expert:** Minghao Pan, PhD candidate at Caltech Mathematics Department.
+**Experts:** Qiao Zhuang (University of Missouri-Kansas City), Qihao Ye (University of California, San Diego), and Zhongqiang Zhang (Worcester Polytechnic Institute). They formulated the question, verified the QED-generated proof, and carried out the dependent mathematical work.
 
-**Workflow:** Minghao Pan provided the problem statement to QED with no further mathematical input. QED ran in decomposition mode and produced the correct proof through multiple rounds of refinement, including substantial changes of proof plan by the decomposition agent. The proof was verified by the expert.
+**Workflow:** Experts gave QED the problem: finding a function that satisfies the constraints. QED returned a candidate with proof. Experts found that the constraints were too weak (they had initially given the wrong problem). Experts strengthened the constraints, gave the problem back to QED, and instructed QED to continue the search starting from the previous candidate. QED then returned the final candidate and the proofs. In the entire loop, there was no human intervention besides the experts changing their problem statement once.
 
-**Problems and proofs:** in /proved_statements/prob-May-15-2026 in this github repo.
+**Problems and proofs:** Will be released after the paper is arxived.
 
 <details>
-<summary><b>Expert comment (Minghao Pan)</b></summary>
+<summary><b>Expert comment (Qiao Zhuang, Qihao Ye, Zhongqiang Zhang)</b></summary>
 
-This is a research-level open question in probability theory. Without human mathematical input beyond the problem statement, QED generated a correct proof through multiple rounds of refinement, including substantial changes of proof plan by the decomposition agent. The first result is a solid specialized contribution. Its proof has real mathematical content as it cleverly combines probabilistic constructions with spectral analysis. Its significance appears comparable to work suitable for venues such as the *Electronic Journal of Probability* or *Proceedings of the American Mathematical Society*. The question is in the style of precise probabilistic calculations and estimates.
-
-</details>
-
----
-
-### 5. Total Variation Asymptotics for Switch-Walk-Switch on $\mathbb{Z}_2 \wr \mathbb{Z}$ (Probability Theory)
-
-**Domain:** Probability theory, random walks on groups, lamplighter random walks, total variation distance.
-
-**What QED solved:** Let $P_t^x$ denote the law at time $t$ of the discrete-time switch-walk-switch walk on $\mathbb{Z}_2 \wr \mathbb{Z}$. For $x=(\mathbf{0},0)$ and $y=(\mathbf{0},2)$, QED proved the asymptotic behavior
-$$\|P_t^x - P_t^y\|_{\mathrm{TV}} \asymp t^{-1/2},$$
-where $\asymp$ denotes equality up to positive multiplicative constants.
-
-**Expert:** Minghao Pan, PhD candidate at Caltech Mathematics Department.
-
-**Workflow:** Minghao Pan provided the problem statement to QED with no further mathematical input. QED ran in decomposition mode and produced the correct proof through multiple rounds of refinement, including substantial changes of proof plan by the decomposition agent. The proof was verified by the expert.
-
-**Problems and proofs:** in /proved_statements/prob-May-15-2026 in this repo.
-
-<details>
-<summary><b>Expert comment (Minghao Pan)</b></summary>
-
-This is a technically nontrivial PhD-level problem in probability theory. Without human mathematical input beyond the problem statement, QED generated a correct proof through multiple rounds of refinement, including substantial changes of proof plan by the decomposition agent. The question is in the style of precise probabilistic calculations and estimates.
+The use of LLM-based search aims to replace the traditional hand-crafted process of identifying suitable Carleman weight functions for deriving Carleman estimates. This process is often difficult, highly problem-dependent, and time-consuming, and may still fail to produce a valid construction through manual trial. By automating the search over admissible weight functions under the required structural and inequality constraints, the approach has the potential to systematically explore viable candidates, thereby reducing reliance on ad hoc intuition and extensive analytical effort. This is particularly important for inverse problems, where the construction of an appropriate Carleman weight is a central and highly nontrivial step that directly impacts stability and uniqueness results. An LLM-assisted search framework can help identify feasible weight structures, guide the design of admissible functions, and accelerate the development of Carleman-based methodologies, thereby extending their applicability to more complex or less structured problems.
 
 </details>
 
