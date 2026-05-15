@@ -104,6 +104,52 @@ See the [full expert comments](proved_statements/analysis-Apr-24-2026/README.md#
 
 </details>
 
+---
+
+### 4. Return Probability Asymptotics for Lamplighter Walk on $\mathbb{Z}_2 \wr T_d$ (Probability Theory)
+
+**Domain:** Probability theory, random walks on groups, lamplighter random walks, spectral analysis.
+
+**What QED solved:** For $d \ge 3$ and the switch–walk–switch lamplighter random walk on $\mathbb{Z}_2 \wr T_d$ (where $T_d$ is the infinite $d$-regular tree), QED proved the sharp asymptotic
+$$p_{2n}(e,e) = \rho_d^{2n} \exp\!\left[-\bigl(\pi^2(\log(d-1))^2 + o(1)\bigr)\frac{n}{\log^2 n}\right], \quad \rho_d = \frac{2\sqrt{d-1}}{d}.$$
+The proof cleverly combines probabilistic constructions with spectral analysis.
+
+**Expert:** Minghao Pan, PhD candidate at Caltech Mathematics Department.
+
+**Workflow:** Minghao Pan provided the problem statement to QED with no further mathematical input. QED ran in decomposition mode and produced the correct proof through multiple rounds of refinement, including substantial changes of proof plan by the decomposition agent. The proof was verified by the expert.
+
+**Problems and proofs:** in /proved_statements in this github repo.
+
+<details>
+<summary><b>Expert comment (Minghao Pan)</b></summary>
+
+This is a research-level open question in probability theory. Without human mathematical input beyond the problem statement, QED generated a correct proof through multiple rounds of refinement, including substantial changes of proof plan by the decomposition agent. The first result is a solid specialized contribution. Its proof has real mathematical content as it cleverly combines probabilistic constructions with spectral analysis. Its significance appears comparable to work suitable for venues such as the *Electronic Journal of Probability* or *Proceedings of the American Mathematical Society*. The question is in the style of precise probabilistic calculations and estimates.
+
+</details>
+
+---
+
+### 5. Total Variation Asymptotics for Switch-Walk-Switch on $\mathbb{Z}_2 \wr \mathbb{Z}$ (Probability Theory)
+
+**Domain:** Probability theory, random walks on groups, lamplighter random walks, total variation distance.
+
+**What QED solved:** Let $P_t^x$ denote the law at time $t$ of the discrete-time switch-walk-switch walk on $\mathbb{Z}_2 \wr \mathbb{Z}$. For $x=(\mathbf{0},0)$ and $y=(\mathbf{0},2)$, QED proved the asymptotic behavior
+$$\|P_t^x - P_t^y\|_{\mathrm{TV}} \asymp t^{-1/2},$$
+where $\asymp$ denotes equality up to positive multiplicative constants.
+
+**Expert:** Minghao Pan, PhD candidate at Caltech Mathematics Department.
+
+**Workflow:** Minghao Pan provided the problem statement to QED with no further mathematical input. QED ran in decomposition mode and produced the correct proof through multiple rounds of refinement, including substantial changes of proof plan by the decomposition agent. The proof was verified by the expert.
+
+**Problems and proofs:** in /proved_statements in this repo.
+
+<details>
+<summary><b>Expert comment (Minghao Pan)</b></summary>
+
+This is a technically nontrivial PhD-level problem in probability theory. Without human mathematical input beyond the problem statement, QED generated a correct proof through multiple rounds of refinement, including substantial changes of proof plan by the decomposition agent. The question is in the style of precise probabilistic calculations and estimates.
+
+</details>
+
 
 ## Standalone Proof Verifier
 
