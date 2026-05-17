@@ -1156,7 +1156,7 @@ async def run_structural_verification(
             recent_activity="Running structural verification on aggregated proof"
         )
 
-    await run_model_for_agent(
+    response = await run_model_for_agent(
         agent_role_cfg=role_cfg,
         prompt=prompt,
         working_dir=state.output_dir,
@@ -1165,6 +1165,10 @@ async def run_structural_verification(
         tracker=tracker,
         call_name="proof_verify_structural",
     )
+
+    # Fall back to the agent's returned message if it did not write the file via tool call.
+    if not read_file(output_file):
+        write_file(output_file, response)
 
     if decomp_logger:
         decomp_logger.log_agent_result("structural_verifier", "Structural verification report generated")
@@ -1222,7 +1226,7 @@ async def run_detailed_verification(
             recent_activity="Running detailed verification on aggregated proof"
         )
 
-    await run_model_for_agent(
+    response = await run_model_for_agent(
         agent_role_cfg=role_cfg,
         prompt=prompt,
         working_dir=state.output_dir,
@@ -1231,6 +1235,10 @@ async def run_detailed_verification(
         tracker=tracker,
         call_name="proof_verify_detailed",
     )
+
+    # Fall back to the agent's returned message if it did not write the file via tool call.
+    if not read_file(output_file):
+        write_file(output_file, response)
 
     if decomp_logger:
         decomp_logger.log_agent_result("detailed_verifier", "Detailed verification report generated")
