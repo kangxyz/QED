@@ -11,7 +11,6 @@ There are two problems in this folder. Both problems are research-level open que
 - **Structural verifier:** Codex, gpt-5.5-pro
 - **Detailed verifier:** Codex, gpt-5.5-pro
 - **Regulator:** Codex, gpt-5.5-pro
-- **Brainstorm:** Disabled
 
 ## Results
 
