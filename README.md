@@ -43,10 +43,24 @@ QED is a multi-agent pipeline that takes a mathematical problem statement in LaT
 
 **Expert:** Xiaoqian Xu, Assistant Professor of Mathematics at Duke Kunshan University and Zu Chongzhi Center for Mathematics and Computational Sciences.
 
+**Problems and proofs:** [`proved_statements/analysis-May-19-2026/`](proved_statements/analysis-May-19-2026/)
+
 <details>
 <summary><b>Expert comment (Xiaoqian Xu)</b></summary>
 
-This work is comparable to work published at *SIAM Journal on Mathematical Analysis* (SIMA) or *Journal of Differential Equations* (JDE).
+This work is comparable to work published at *SIAM Journal on Mathematical Analysis* (SIMA) or *Journal of Differential Equations* (JDE) or higher.
+
+The paper captures three typical scenarios a human researcher might face:
+
+1. **Section 2 (polynomial bound for inviscid shears):** This shows that AI is good at handling prove-or-disprove problems. If one direction is not that hard, AI may be able to solve it. This is quite different from human researchers.
+
+2. **Section 3 (diffusive shears):** Given results from humans, AI can easily fill in the gaps and optimize the constants. This illustrates universally useful ways of using AI.
+
+3. **Section 4 (oscillating flows):** This is remarkable. The problem itself is intuitive, but solving it would mean spending months learning Floquet theory—painful for someone not versed in functional analysis. AI solved it nicely. The proof is standard, but what's hard is the combination of standard techniques from quite different fields—a common scenario for human researchers, particularly when training students.
+
+**On AI capability:** This shows that the lower bound for AI (since there is almost no cost in human effort, like learning or thinking) is already quite high. It may suggest that mathematics under a certain level—a level that we cannot even call medium for average mathematicians—should be seen as trivial.
+
+See the [full expert comments](proved_statements/analysis-May-19-2026/README.md#expert-comments) for complete details.
 
 </details>
 
@@ -89,7 +103,9 @@ The proof cleverly combines probabilistic constructions with spectral analysis.
 
 **Workflow:** Minghao Pan provided the problem statement to QED with no further mathematical input. QED ran in decomposition mode and produced the correct proof through multiple rounds of refinement, including substantial changes of proof plan by the decomposition agent. The proof was verified by the expert.
 
-**Problems and proofs:** in /proved_statements/prob-May-15-2026 in this github repo.
+**Paper:** [Return Probability for the Switch–Walk–Switch Lamplighter Walk on a Regular Tree (arXiv:2605.21744)](https://arxiv.org/abs/2605.21744)
+
+**Problems and proofs:** [`proved_statements/prob-May-15-2026/`](proved_statements/prob-May-15-2026/)
 
 <details>
 <summary><b>Expert comment (Minghao Pan)</b></summary>
@@ -112,7 +128,7 @@ where $\asymp$ denotes equality up to positive multiplicative constants.
 
 **Workflow:** Minghao Pan provided the problem statement to QED with no further mathematical input. QED ran in decomposition mode and produced the correct proof through multiple rounds of refinement, including substantial changes of proof plan by the decomposition agent. The proof was verified by the expert.
 
-**Problems and proofs:** in /proved_statements/prob-May-15-2026 in this repo.
+**Problems and proofs:** [`proved_statements/prob-May-15-2026/`](proved_statements/prob-May-15-2026/)
 
 <details>
 <summary><b>Expert comment (Minghao Pan)</b></summary>

@@ -2,6 +2,9 @@
 
 There are two problems in this folder. Both problems are research-level open questions in probability theory contributed by **Minghao Pan**, PhD candidate at the Caltech Mathematics Department.
 
+**Paper (P1):** [Return Probability for the Switch–Walk–Switch Lamplighter Walk on a Regular Tree (arXiv:2605.21744)](https://arxiv.org/abs/2605.21744)
+**Authors:** Chenyang An, Minghao Pan
+
 ## QED Configuration
 
 - **Prover mode:** Decomposition
