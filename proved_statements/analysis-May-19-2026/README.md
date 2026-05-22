@@ -1,9 +1,6 @@
 # Analysis Problems (May 19, 2026)
 
-This folder contains proofs for **lower bounds of advection-diffusion equations** across three distinct scenarios. The work is documented in [arXiv:2605.20623](https://arxiv.org/abs/2605.20623).
-
-**Paper:** "Lower Bounds for Advection-Diffusion Equations: An Exploration with AI-Generated Proofs"
-**Authors:** Chenyang An, Xiaoqian Xu
+This folder contains proofs for **lower bounds of advection-diffusion equations** across three distinct scenarios. 
 
 ## QED Configuration
 
@@ -57,7 +54,3 @@ These scenarios cover a large portion of mathematical research problems. AI demo
 If this paper were written by human beings, it would merit submission to a journal like JDE (Journal of Differential Equations) or SIMA (SIAM Journal on Mathematical Analysis) or higher. It shows that the lower bound for AI capability (since there is almost no cost in human effort, like learning or thinking) is already quite high.
 
 This may suggest that mathematics under a certain level—a level that we cannot even call medium for average mathematicians—should be seen as trivial.
-
-## References
-
-- An, Chenyang; Xu, Xiaoqian. "Lower Bounds for Advection-Diffusion Equations: An Exploration with AI-Generated Proofs". [arXiv:2605.20623](https://arxiv.org/abs/2605.20623), May 2026.

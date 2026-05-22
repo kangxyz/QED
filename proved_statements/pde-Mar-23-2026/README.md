@@ -1,6 +1,5 @@
 # Carleman Weight Function Construction (Mar 23, 2026)
 
-This problem is an open research problem contributed by **Qiao Zhuang** (University of Missouri-Kansas City), **Qihao Ye** (University of California, San Diego), and **Zhongqiang Zhang** (Worcester Polytechnic Institute).
 
 ## Results
 

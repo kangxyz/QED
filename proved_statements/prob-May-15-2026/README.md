@@ -1,9 +1,5 @@
 # Probability Problems (May 15, 2026)
 
-There are two problems in this folder. Both problems are research-level open questions in probability theory contributed by **Minghao Pan**, PhD candidate at the Caltech Mathematics Department.
-
-**Paper (P1):** [Return Probability for the Switch–Walk–Switch Lamplighter Walk on a Regular Tree (arXiv:2605.21744)](https://arxiv.org/abs/2605.21744)
-**Authors:** Chenyang An, Minghao Pan
 
 ## QED Configuration
 
@@ -38,14 +34,6 @@ $$\rho_d = \frac{2\sqrt{d-1}}{d}.$$
 Let $P_t^x$ denote the law at time $t$ of the discrete-time switch-walk-switch walk on $\mathbb{Z}_2 \wr \mathbb{Z}$. For $x = (\mathbf{0}, 0)$ and $y = (\mathbf{0}, 2)$, one has the asymptotic behavior
 $$\|P_t^x - P_t^y\|_{\mathrm{TV}} \asymp t^{-1/2},$$
 where $\asymp$ denotes equality up to positive multiplicative constants.
-
-## Workflow
-
-- Minghao Pan provided two research-level open problems in probability theory to QED.
-- QED ran on each problem with the configuration above.
-- No human mathematical input was provided beyond the problem statements.
-- QED generated correct proofs for both questions through multiple rounds of refinement, including substantial changes of proof plan by the decomposition agent.
-- The proofs for P1 and P2 were sent back to Minghao Pan, who verified their correctness.
 
 ## Expert Comments from Minghao Pan
 
