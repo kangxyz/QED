@@ -11,10 +11,6 @@ There is one problem in this folder. The problem concerns the **Local Invariant 
 
 ## Results
 
-| Problem | Result | Round |
-|---------|--------|-------|
-| P1 (LICT_Z for H^1) | Proved | 1 plan, 2 revision, 7 attempted proofs in total|
-
 Final proof is human-verified by Professor Yilong Zhang.
 
 ## Background
