@@ -306,7 +306,8 @@ TSWLatexianTemp*
 
 *api*
 
-_pycache__/
+__pycache__/
+docs/
 *.pyc
 
 # Streamlit UI runtime data
